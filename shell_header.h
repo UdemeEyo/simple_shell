@@ -1,7 +1,13 @@
 #ifndef SHELL_HEADER_H
 #define SHELL_HEADER_H
 
-int mul(int, int);
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/syscall.h>
 
-#endif /* SHELL_HEADER_H *?
+int mul(int, int);
+void shell_prompt(char **agv, char **env);
+
+#endif /* SHELL_HEADER_H */
 
