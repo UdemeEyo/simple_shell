@@ -16,9 +16,7 @@
 void print_prompt(void);
 ssize_t read_command(char *buffer);
 void execute_command(char *command);
-
-
-int main(int ac, char **av, char **env);
 void cd_prompt(char **av, char **env);
+int main(void);
 
 #endif

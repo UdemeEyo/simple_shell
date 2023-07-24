@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <string.h>
 #include "shell.h"
 
 /**
@@ -15,14 +21,14 @@ void print_prompt(void)
 */
 ssize_t read_command(char *buffer)
 {
-	ssize_t n_chars = getline(&buffer, &(size_t)MAX_INPUT_LENGTH, stdin);
+	ssize_t n_chars = getline(&buffer, &(size_t){MAX_INPUT_LENGTH}, stdin);
 
 	if (feof(stdin))
 		exit(EXIT_SUCCESS);
 	perror("Error reading command");
 	exit(EXIT_FAILURE);
 }
-return (n_chars);
+	return (n_chars);
 }
 
 /**
@@ -32,6 +38,7 @@ return (n_chars);
 void execute_command(char *command)
 {
 	char *argv[] = {command, NULL};
+	extern char **env;
 
 	pid_t pid = fork();
 	if (pid == -1)
@@ -68,6 +75,7 @@ if (n_chars <= 1)
 continue;
 /*remove newline character*/
 buffer[n_chars - 1] = '\0';
+
 execute_command(buffer);
 }
 	free(buffer);
