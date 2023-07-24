@@ -1,14 +1,15 @@
-#include "shell_header.h"
 #include <sys/wait.h>
+#include "shell_header.h"
+#include <string.h>
+#include <unistd.h>
 
 /**
- * shell_prompt - functiont that runs the simple shell
+ * shell_prompt - function that runs the simple shell
  * @agv: argument vector
  * @env: environment variable
  * Return: no return
  */
-
-void shell_prompt(char **agv, char **env)
+void shell_prompt(char **env)
 {
 	char *str = NULL;
 	int a = 0, stat;
@@ -19,7 +20,7 @@ void shell_prompt(char **agv, char **env)
 
 	while (1)
 	{
-		printf("D-UShell$ ");
+		write(STDOUT_FILENO, "D-UShell$ ", 10);
 
 		numChar = getline(&str, &num, stdin);
 		if (numChar == -1)
@@ -45,7 +46,10 @@ void shell_prompt(char **agv, char **env)
 		if (pid_child == 0)
 		{
 			if (execve(argv[0], argv, env) == -1)
-				printf("%s No such file or directory\n", agv[0]);
+			{
+				char *error_msg = "No such file or directory\n";
+				write(STDOUT_FILENO, error_msg, strlen(error_msg));
+			}
 		}
 		else
 			wait(&stat);

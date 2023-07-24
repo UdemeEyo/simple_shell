@@ -7,7 +7,6 @@
 #include <sys/syscall.h>
 
 int mul(int, int);
-void shell_prompt(char **agv, char **env);
+void shell_prompt(char **env);
 
 #endif /* SHELL_HEADER_H */
-
