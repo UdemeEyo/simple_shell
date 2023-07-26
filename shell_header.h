@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 
 int mul(int, int);
-int shell_prompt(char **argv, char **env);
+int shell_prompt();
 void command_parser(char *str, char **cmd_arg);
 void command_exec(char **cmd_arg);
 
