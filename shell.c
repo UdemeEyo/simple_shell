@@ -2,8 +2,7 @@
 #include "shell_header.h"
 #include <string.h>
 #include <unistd.h>
-
-#define MAX_CD 10
+#define MAXCD 10
 /**
  * shell_prompt - function that runs the simple shell
  * @agv: argument vector
@@ -13,10 +12,10 @@
 void shell_prompt(char **env)
 {
 	char *str = NULL;
-	int a = 0, j, stat;
+	int a, b, stat;
 	size_t num = 0;
 	ssize_t numChar;
-	char *argv[MAX_CD];
+	char *argv[MAXCD];
 	pid_t pid_child;
 
 	while (1)
@@ -29,20 +28,19 @@ void shell_prompt(char **env)
 			free(str);
 			exit(EXIT_FAILURE);
 		}
-
+		a = 0;
 		while (str[a])
 		{
 			if (str[a] == '\n')
 				str[a] = 0;
 			a++;
 		}
-
-		j = 0;
+		b = 0;
 		argv[0] = strtok(str, " ");
-while (argv[j])
-{
-	argv[++j] = strtok(NULL, " ");
-}
+		while (argv[b])
+		{
+			argv[++b] = strtok(NULL, " ");
+		}
 		pid_child = fork();
 		if (pid_child == -1)
 		{
