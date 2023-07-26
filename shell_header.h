@@ -8,5 +8,5 @@
 
 int mul(int, int);
 void shell_prompt(char **env);
-
+char *get_path(char **env, char *cmd);
 #endif /* SHELL_HEADER_H */
