@@ -10,7 +10,7 @@
 void command_parser(char *str, char **cmd_arg);
 void command_exec(char **cmd_arg);
 
-int shell_prompt()
+int shell_prompt(void)
 {
 	char *str = NULL;
 	int stat;
