@@ -1,4 +1,5 @@
 #include "shell_header.h"
+
 void command_parser(char *str, char **cmd_arg);
 void command_exec(char **argv, char **env);
 #define MAXCD 10
@@ -12,7 +13,7 @@ void command_exec(char **argv, char **env);
 int shell_prompt(char **argv, char **env)
 {
 	char *str = NULL;
-	int stat;
+	int status;
 	size_t num = 0;
 	ssize_t numChar;
 	char *cmd_arg[MAXCD];
@@ -43,6 +44,6 @@ int shell_prompt(char **argv, char **env)
 		if (pid_child == 0)
 			command_exec(cmd_arg, env);
 		else
-			wait(&stat);
+			wait(&status);
 	}
 }
