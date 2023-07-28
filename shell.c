@@ -1,5 +1,6 @@
 #include "shell_header.h"
-
+void command_parser(char *str, char **cmd_arg);
+void command_exec(char **argv, char **env);
 #define MAXCD 10
 /**
  * shell_prompt - function that runs the simple shell
@@ -9,8 +10,6 @@
  * @env: environment variable
  * Return: no return
  */
-void command_parser(char *str, char **cmd_arg);
-void command_exec(char **argv, char **env);
 
 int shell_prompt(char **argv, char **env)
 {

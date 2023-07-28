@@ -36,6 +36,6 @@ int _env(char **args, char __attribute__((__unused__)) **front);
 /*ex_builtins*/
 int handle_alias(char **args, char __attribute__((__unused__)) **front);
 void set_alias_value(char *alias_name, char *alias_value);
-//void print_aliases(alias_t *alias_list);
+/* void print_aliases(alias_t *alias_list); */
 
 #endif /* SHELL_HEADER_H */
