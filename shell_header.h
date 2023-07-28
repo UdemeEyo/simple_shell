@@ -11,7 +11,6 @@
 
 int mul(int, int);
 int shell_prompt(char **argv, char **env);
-//int shell_prompt(void);
 
 /*stdin formatting*/
 void command_parser(char *str, char **cmd_arg);
