@@ -22,7 +22,7 @@ int shell_prompt(char **argv, char **env)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "D-UShell$ ", 10);
+			write(STDOUT_FILENO, "#cisfun$ ", 10);
 
 		if (!argv)
 			return (-1);
