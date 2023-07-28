@@ -2,7 +2,8 @@
 
 /**
  * command_exec - function to execute commands
- * @cmd_arg: command arguments
+ * @argv: argument vector
+ * @env: environment vector
  * Return: no return
  */
 

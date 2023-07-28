@@ -3,8 +3,10 @@
 #define MAXCD 10
 /**
  * shell_prompt - function that runs the simple shell
+ * @argv: argument vector
  * @str: input string
- * @cmd_arg: command arguments
+ * @cmd_arg: tokens from strtok
+ * @env: environment variable
  * Return: no return
  */
 void command_parser(char *str, char **cmd_arg);
