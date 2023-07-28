@@ -14,13 +14,3 @@ int main(int agc, char **agv, char **env)
 
 	return (0);
 }
-/**
- * _shell_prompt - function that executes command prompt
- * @agv: argument vector
- * @env: environment
- * Return: void
- */
-int shell_prompt(char **agv, char **env)
-{
-	return (0);
-}

@@ -6,9 +6,9 @@
  * Return: no return
  */
 
-void command_exec(char **cmd_arg)
+void command_exec(char **cmd_arg, char **agv, char **env)
 {
-	if (execvp(cmd_arg[0], cmd_arg) == -1)
+	if (execve(cmd_arg[0], cmd_arg, env) == -1 && execve(agv[0], agv, env) == -1)
 	{
 		char *error_msg = "No such file or directory\n";
 

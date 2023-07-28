@@ -11,9 +11,11 @@
 
 int mul(int, int);
 int shell_prompt(char **agv, char **env);
-int shell_prompt(void);
+//int shell_prompt(void);
+
+/*stdin formatting*/
 void command_parser(char *str, char **cmd_arg);
-void command_exec(char **cmd_arg);
+void command_exec(char **cmd_arg, char **agv, char **env);
 
 /*builtins*/
 void all_cmd(void);
@@ -35,6 +37,6 @@ int _env(char **args, char __attribute__((__unused__)) **front);
 /*ex_builtins*/
 int handle_alias(char **args, char __attribute__((__unused__)) **front);
 void set_alias_value(char *alias_name, char *alias_value);
-void print_aliases(alias_t *alias_list);
+//void print_aliases(alias_t *alias_list);
 
 #endif /* SHELL_HEADER_H */
