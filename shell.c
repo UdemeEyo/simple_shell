@@ -5,8 +5,6 @@ void command_exec(char **argv, char **env);
 /**
  * shell_prompt - function that runs the simple shell
  * @argv: argument vector
- * @str: input string
- * @cmd_arg: tokens from strtok
  * @env: environment variable
  * Return: no return
  */
