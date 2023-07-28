@@ -2,15 +2,15 @@
 
 /**
  * main - Entry program
- * @agc: argument count
- * @agv: argument vector
+ * @argc: argument count
+ * @argv: argument vector
  * @env: environment
  * Return: Always (Success) 1
  */
-int main(int agc, char **agv, char **env)
+int main(int argc, char **argv, char **env)
 {
-	if (agc == 1)
-		shell_prompt(agv, env);
+	if (argc == 1)
+		shell_prompt(argv, env);
 
 	return (0);
 }

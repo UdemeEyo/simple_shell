@@ -10,12 +10,12 @@
 #include <sys/wait.h>
 
 int mul(int, int);
-int shell_prompt(char **agv, char **env);
+int shell_prompt(char **argv, char **env);
 //int shell_prompt(void);
 
 /*stdin formatting*/
 void command_parser(char *str, char **cmd_arg);
-void command_exec(char **cmd_arg, char **agv, char **env);
+void command_exec(char **argv, char **env);
 
 /*builtins*/
 void all_cmd(void);

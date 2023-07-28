@@ -8,9 +8,9 @@
  * Return: no return
  */
 void command_parser(char *str, char **cmd_arg);
-void command_exec(char **cmd_arg, char **agv, char **env);
+void command_exec(char **argv, char **env);
 
-int shell_prompt(char **agv, char **env)
+int shell_prompt(char **argv, char **env)
 {
 	char *str = NULL;
 	int stat;
@@ -23,6 +23,9 @@ int shell_prompt(char **agv, char **env)
 	{
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "D-UShell$ ", 10);
+
+		if (!argv)
+			return (-1);
 
 		numChar = getline(&str, &num, stdin);
 		if (numChar == -1)
@@ -39,7 +42,7 @@ int shell_prompt(char **agv, char **env)
 			exit(EXIT_FAILURE);
 		}
 		if (pid_child == 0)
-			command_exec(cmd_arg, agv, env);
+			command_exec(cmd_arg, env);
 		else
 			wait(&stat);
 	}
