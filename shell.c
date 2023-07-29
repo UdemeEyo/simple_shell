@@ -13,12 +13,12 @@ void command_exec(char **argv, char **env);
 int shell_prompt(char **argv, char **env)
 {
 	char *str = NULL;
-	int status;
 	size_t num = 0;
 	ssize_t numChar;
 	/* char *cmd_arg[MAXCD]; */
 	int a;
 	pid_t pid_child;
+	int status;
 
 	while (1)
 	{
@@ -47,6 +47,7 @@ int shell_prompt(char **argv, char **env)
 		argv[a] = NULL;
 
 		pid_child = fork();
+
 		if (pid_child == -1)
 		{
 			free(str);
