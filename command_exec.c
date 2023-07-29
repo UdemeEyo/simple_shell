@@ -7,7 +7,7 @@
  * Return: no return
  */
 
-void command_exec(char **argv, char **env)
+void command_exec(char *argv[], char **env)
 {
 	if (execve(argv[0], argv, env) == -1)
 	{

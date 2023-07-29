@@ -4,7 +4,7 @@
  * command_parser - parses command from stdin
  * to tokens
  * @str: input string
- * @cmd_arg: individual tokens
+ * @cmd_arg: array of tokens
  * Return: no return
  */
 
