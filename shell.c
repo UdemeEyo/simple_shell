@@ -44,6 +44,7 @@ int shell_prompt(char **argv, char **env)
 			a++;
 		}
 		argv[0] = str;
+		argv[a] = NULL;
 
 		pid_child = fork();
 		if (pid_child == -1)
