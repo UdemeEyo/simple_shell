@@ -54,7 +54,7 @@ int shell_prompt(char **argv, char **env)
 		if (pid_child == 0)
 		{	/* command_exec(cmd_arg, env); */
 			if (execve(argv[0], argv, env) == -1)
-				printf("./hsh: No such file or directory\n");
+				write(STDOUT_FILENO,"./hsh: No such file or directory\n", 35);
 		}
 		else
 			wait(&status);
